@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 20px">
+    <div class="col-12">
+      <span>{{cartSrvc.cartCount}}</span>
+      <i class="fa fa-cart-shopping"></i>
+
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let item of product;index as i">
+      <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="card">
+
+          <div class="card-body">
+            <img [src]="item.imgsrc" alt="" (click)="open(item.imgsrc)">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.price}}
+            </p>
+            <button type="button" class="btn btn-primary" (click)="added(i)">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+</div>
